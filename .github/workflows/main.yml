@@ -16,4 +16,4 @@ jobs:
             - name: Deploy no ambiente
               run: echo "Executando o deploy no ambiente de ${{inputs.ambiente || github.event.client_payload.ambiente}}"
             - name: Curl Deploy no Ambiente
-              run: "curl -X POST https://webhook.site/d5ac71ff-32e8-4d86-a196-3535df604dc4 -d '{inputs.ambiente || github.event.client_payload.ambiente}'"
+              run: "curl -X POST https://webhook.site/d5ac71ff-32e8-4d86-a196-3535df604dc4 -d '{ambiente: ${{inputs.ambiente || github.event.client_payload.ambiente}}}'"
